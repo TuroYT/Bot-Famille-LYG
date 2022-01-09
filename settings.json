@@ -1,0 +1,11 @@
+{
+    "famille": "Los Zetas",
+    "prefix": "!",
+    "TOKEN": "BOT TOKEN",
+    "id_googlesheet" : "1c3Ec9lFyo-CnShy4Y9vCa5Li3dpTvz-ukTU4EQlTbLE",
+    "name_sheetpage" : "example",
+    "credentials" : "cred.json",
+    "activite" : "Bot Famille LYG#4",
+    "logo_famille" : "https://cdn.discordapp.com/avatars/866998408484225044/00d217bfe310a39b2ae93aca2f9c0b37.png?size=1024",
+    "logs_channel" : 911349974661476414
+}
