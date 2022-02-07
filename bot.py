@@ -115,7 +115,7 @@ async def lzco(ctx):
     string = []
     for elt in range(0, len(lz)):
         string.append(lz[elt][0]+ " est connecté depuis "+ lz[elt][1][1]+"h"+lz[elt][1][2])
-    embed = discord.Embed(title="Voici les Joueurs connectés en {famille_name} :", colour=discord.Color.random(), timestamp=datetime.datetime.now(), description="\n".join(string))
+    embed = discord.Embed(title="Voici les Joueurs connectés en {famille_name} :".format(famille_name=famille_name), colour=discord.Color.random(), timestamp=datetime.datetime.now(), description="\n".join(string))
     embed.set_thumbnail(url= settings["logo_famille"])
     embed.set_author(name=ctx.author.display_name,icon_url=ctx.author.avatar_url)
     await message.edit(content=None, embed=embed)
