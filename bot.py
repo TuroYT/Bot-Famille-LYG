@@ -8,6 +8,7 @@ import logging
 import requests
 import json
 logging.basicConfig(format='%(asctime)s : %(message)s', datefmt='%m/%d/%Y %H:%M:%S', filename='logs.txt', encoding='utf-8')
+intents = discord.Intents.default()
 
 settings = json.loads(open("settings.json").read())
 #chargement des settings
@@ -21,7 +22,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name(settings["credentials"]
 client = gspread.authorize(creds)
 sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/"+settings["id_googlesheet"]).sheet1
 activity = discord.Activity(type=discord.ActivityType.watching, name=settings["activite"])
-bot = commands.Bot(command_prefix = prefix, description = famille_name, help_command=None, activity=activity, status=discord.Status.do_not_disturb)
+bot = commands.Bot(command_prefix = prefix, description = famille_name, help_command=None, activity=activity, status=discord.Status.do_not_disturb, intents=intents)
 
 def getdoc():
     response = requests.get("https://opensheet.elk.sh/"+settings["id_googlesheet"]+"/"+settings["name_sheetpage"])
